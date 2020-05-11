@@ -4,7 +4,7 @@ We collected Twitter data from the beginning of the outbreak in europe between 1
 The dataset can be downloaded here.  
 A Twitter developer account is required to hydrate the tweet IDs. This can e.g. be done with twarc.
 
-For this dataset we have downloaded [xxx] tweets in [xxx] languages from 16 February until 03 March 2020. The keywords we used were CORONA, CORONAVIRUS and #COVID-19. There are several gaps in the data
+For this dataset we have downloaded 22376075 tweets in 64 languages from 16 February until 03 March 2020. The keywords we used were CORONA, CORONAVIRUS and #COVID-19. 
 
 
 Keyword | Dates | Gaps
@@ -23,3 +23,5 @@ Keyword | Dates | Gaps
 
 
 ![Languages](lang.png "9 most used languages in our dataset")
+
+![Time](distribution_per_hour.png "Number of tweets per hour")
