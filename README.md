@@ -1,17 +1,17 @@
 # Corona Twitter Dataset 
-We collected Twitter data from the beginning of the COVID-19-outbreak in europe between 16 February and 03 March 2020.
+We collected Twitter data from the beginning of the COVID-19-outbreak in Europe between 16 February and 03 March 2020.
 
-The dataset can be downloaded [here]().  
+The dataset can be downloaded [here](https://depositonce.tu-berlin.de/handle/11303/11122).  
 A [Twitter developer account](https://developer.twitter.com/en/apply-for-access "Click here if you want to apply for a 
-developer account") is required to hydrate the tweet IDs. This can e.g. be done with 
+developer account") is required to hydrate the Tweet IDs. This can e.g. be done with 
 [twarc](https://github.com/DocNow/twarc "Click here for the twarc documentation").
 
-For this dataset we have downloaded 22376075 tweets in 64 languages from 16 February until 03 March 2020. 
+Another dataset where the authors started collecting Tweets after 03 March 2020 can be found 
+[here](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/LW0BTB).
+
+For this dataset we have downloaded 22.376.075 Tweets in 64 languages from 16 February until 03 March 2020. 
 The keywords we used were CORONA, CORONAVIRUS and #COVID-19. Please note that tweets that have been
 deleted in the meantime can't be hydrated.
-
-
-
 
 Keywords | Dates | Gaps
 --- | --- | ---
@@ -25,8 +25,8 @@ Keywords | Dates | Gaps
 ***CORONA, CORONAVIRUS,***<br>***#COVID-19*** | 29 February 2020 | 0h-5:26h
 ***CORONA, CORONAVIRUS,***<br>***#COVID-19*** | 01 March 2020 | 0h-7:07h
 ***CORONA, CORONAVIRUS,***<br>***#COVID-19*** | 02 March 2020 | 0h-17:01h
-***CORONA, CORONAVIRUS,***<br>***#COVID-19*** | 03 March 2020 | 0h-8:17h
+***CORONA, CORONAVIRUS,***<br>***#COVID-19*** | 03 March 2020 | 0h-8:17h  
 
-Below you see the number of tweets over time (per hour) and also for the 9 most frequent languages.
+Below you see the number of tweets over time (per hour, UTC) and also for the 9 most frequent languages.
 
 ![Stats](tweets_stats.png "Number of tweets by language and over time")
