@@ -25,12 +25,31 @@ def id_iterator(fnames):
 @click.option('--ect', help='path to tweet ids from doi.org/10.14279/depositonce-10012 (ours)')
 @click.option('--c19ti', help='path to tweet ids from github.com/echen102/COVID-19-TweetIDs')
 @click.option('--cti', help='path to tweet ids from doi.org/10.7910/DVN/LW0BTB')
-@click.option('--combined', help='path to unique combined tweet ids dir')
+@click.option('--combined', help='path to unique combined tweet ids dir', required=True)
 def main(ect, c19ti, cti, combined):
 
-    fns_ect = [os.path.join(ect,fn) for fn in os.listdir(ect) if fn.endswith(".txt")]
-    fns_c19ti = [fn for x in os.walk(c19ti) for fn in glob(os.path.join(x[0], 'coronavirus-tweet-id-*.txt'))]
-    fns_cti = [os.path.join(cti,fn) for fn in os.listdir(cti) if fn.endswith(".txt")]
+    if not os.path.isdir(combined):
+        print('path to combined datasets does not exist')
+        os.makedirs(combined)
+
+    if os.path.isdir(ect):
+        fns_ect = [os.path.join(ect, fn) for fn in os.listdir(ect) if fn.endswith(".txt")]
+    else:
+        print('no path to ect given')
+
+    if os.path.dir(c19ti):
+        fns_c19ti = [fn for x in os.walk(c19ti) for fn in glob(os.path.join(x[0], 'coronavirus-tweet-id-*.txt'))]
+    else:
+        print('no path to c19ti given')
+
+    if os.path.dir(cti):
+        fns_cti = [os.path.join(cti,fn) for fn in os.listdir(cti) if fn.endswith(".txt")]
+    else:
+        print('no path to cti given')
+
+    print(len(fns_ect), ' .txt files found in ect')
+    print(len(fns_c19ti), ' .txt files found in c19ti')
+    print(len(fns_cti), ' .txt files found in cti')
     
     unique_ids = set()
     total_num_ids = 0
