@@ -22,9 +22,9 @@ def id_iterator(fnames):
             break
 
 @click.command()
-@click.option('--ect', help='path to tweet ids from doi.org/10.14279/depositonce-10012 (ours)')
-@click.option('--c19ti', help='path to tweet ids from github.com/echen102/COVID-19-TweetIDs')
-@click.option('--cti', help='path to tweet ids from doi.org/10.7910/DVN/LW0BTB')
+@click.option('--ect', default = '', help='path to tweet ids from doi.org/10.14279/depositonce-10012 (ours)')
+@click.option('--c19ti', default = '', help='path to tweet ids from github.com/echen102/COVID-19-TweetIDs')
+@click.option('--cti', default = '', help='path to tweet ids from doi.org/10.7910/DVN/LW0BTB')
 @click.option('--combined', help='path to unique combined tweet ids dir', required=True)
 def main(ect, c19ti, cti, combined):
 
@@ -36,16 +36,19 @@ def main(ect, c19ti, cti, combined):
         fns_ect = [os.path.join(ect, fn) for fn in os.listdir(ect) if fn.endswith(".txt")]
     else:
         print('no path to ect given')
+        fns_ect = []
 
-    if os.path.dir(c19ti):
+    if os.path.isdir(c19ti):
         fns_c19ti = [fn for x in os.walk(c19ti) for fn in glob(os.path.join(x[0], 'coronavirus-tweet-id-*.txt'))]
     else:
         print('no path to c19ti given')
+        fns_c19ti = []
 
-    if os.path.dir(cti):
+    if os.path.isdir(cti):
         fns_cti = [os.path.join(cti,fn) for fn in os.listdir(cti) if fn.endswith(".txt")]
     else:
         print('no path to cti given')
+        fns_cti = []
 
     print(len(fns_ect), ' .txt files found in ect')
     print(len(fns_c19ti), ' .txt files found in c19ti')
